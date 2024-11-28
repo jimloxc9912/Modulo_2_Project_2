@@ -14,48 +14,58 @@ body {
 }
 
 /* Header Styles */
-header {
-  background-color: #333;
-  color: white;
-  padding: 10px 0;
-}
-
-header .logo h1 {
-  text-align: center;
-  font-size: 2.5rem; /* Tamaño aumentado */
-  font-family: 'Roboto', Arial, sans-serif; /* Aplicando la fuente 'Roboto' */
-  color: #ff5f5f; /* Color del logo */
-}
-
 nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 10px;
+  background-color: #ffffff;
 }
 
-.menu {
+.main-menu {
   list-style: none;
   display: flex;
-  gap: 25px; /* Espaciado aumentado */
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
 }
 
-.menu li {
+.main-menu li {
   position: relative;
 }
 
-.menu li a {
-  color: white;
+.main-menu li a {
+  color: rgb(0, 0, 0);
+  padding: 15px 20px;
+  display: block;
   text-decoration: none;
-  font-size: 16px; /* Tamaño ajustado para los enlaces */
-  font-weight: 600;
-  transition: color 0.3s ease;
+  font-size: 16px;
 }
 
-.menu li a:hover {
-  color: #ff5f5f; /* Color de los enlaces al pasar el ratón */
+.main-menu li a:hover {
+  background-color: #555;
 }
 
+/* Estilo para el submenú desplegable */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  top: 100%;
+  left: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-menu li a {
+  padding: 10px 20px;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Estilos para mejorar la visibilidad del menú */
+.main-menu li:hover {
+  background-color: #444;
+}
 /* Home Section */
 #home {
   background: url('images/banner.jpg') no-repeat center center;
