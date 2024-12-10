@@ -1,71 +1,131 @@
-/* Global Styles */
+/* General styles */
 body {
-  font-family: 'Roboto', Arial, sans-serif; /* Usando una fuente externa como respaldo */
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  font-size: 16px; /* Tamaño base para una mejor legibilidad */
-  line-height: 1.5; /* Mejora la legibilidad */
-  color: #333; /* Color de texto para mejorar el contraste */
+  box-sizing: border-box;
 }
 
+/*Estilos de header*/
 .container {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
-/* Header Styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 36px;
+}
+.logo a {
+  text-decoration: none;
+  color: #e74c3c;
+  text-align: center;
+}
+
+.logo span{
+  color:#030303;
+}
+
 nav {
-  background-color: #ffffff;
+  display: flex;
+  text-decoration: none;
 }
 
 .main-menu {
   list-style: none;
-  display: flex;
-  justify-content: flex-end;
   margin: 0;
   padding: 0;
+  display: flex;
 }
 
 .main-menu li {
-  position: relative;
+  margin-right: 20px;
+  margin-bottom: 10px;
 }
 
-.main-menu li a {
-  color: rgb(0, 0, 0);
-  padding: 15px 20px;
-  display: block;
+.main-menu a {
   text-decoration: none;
-  font-size: 16px;
+  color: #000000;
+  font-size: 15px;
+  transition: color 0.1s;
 }
 
-.main-menu li a:hover {
-  background-color: #555;
+.main-menu a:hover {
+  text-decoration: none;
+  background-color: #ffffff;
+  color: #e74c3c;
+  
 }
 
-/* Estilo para el submenú desplegable */
+/* Dropdown menu */
+.dropdown {
+  position: relative;
+  
+}
+
 .dropdown-menu {
-  display: none;
+  list-style: none;
   position: absolute;
-  background-color: #333;
   top: 100%;
   left: 0;
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  display: none;
+  padding:0;
+  background-color: rgb(255, 255, 255);
+  min-width: 150px;
+  text-align: center;
+
 }
 
-.dropdown-menu li a {
-  padding: 10px 20px;
-}
 
 .dropdown:hover .dropdown-menu {
   display: block;
 }
 
-/* Estilos para mejorar la visibilidad del menú */
-.main-menu li:hover {
-  background-color: #444;
+.dropdown-menu li {
+  padding: 10px;
+  width: 100%; 
+  box-sizing: border-box; /* Asegura que padding no aumente el ancho */
 }
+
+.dropdown-menu a {
+  color: #000000;
+}
+
+.dropdown-menu li:hover {
+  color:#e74c3c;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Home Section */
 #home {
   background: url('images/banner.jpg') no-repeat center center;
