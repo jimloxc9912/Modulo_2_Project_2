@@ -4,13 +4,15 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 
 /*Estilos de header*/
 .container {
-  width: 100%;
-  margin: 0 auto;
+ /* width: 100%;*/
+  margin: 0;
   padding: 0 20px;
+  
 }
 
 .header {
@@ -54,7 +56,7 @@ nav {
 .main-menu a {
   text-decoration: none;
   color: #000000;
-  font-size: 15px;
+  font-size: 16px;
   transition: color 0.1s;
 }
 
@@ -103,67 +105,62 @@ nav {
   color:#e74c3c;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Home Section */
 #home {
   background: url('images/banner.jpg') no-repeat center center;
   background-size: cover;
-  padding: 50px 0;
+  padding: 50px 0; /* Aumentar el padding para mayor espacio */
   color: white;
+  text-align: center;
+  font-family: 'Roboto', Arial, sans-serif; /* Centrar todo el texto */
 }
 
 #home h1 {
-  text-align: center;
-  font-size: 2.5rem;
-  font-family: 'Roboto', Arial, sans-serif; /* Aplicando la fuente 'Roboto' */
+  font-size: 3rem; /* Aumentar tamaño de la fuente */
+  
   margin-bottom: 20px;
+  font-weight: bold;
+}
+
+#home h1 span {
+  color: #e74c3c;
+  background-color: #ffffff;
 }
 
 #home p {
-  text-align: center;
-  font-size: 1.2rem;
-  font-family: 'Roboto', Arial, sans-serif; /* Aplicando la fuente 'Roboto' */
+  font-size: 1.5rem;
+  font-family: 'Roboto', Arial, sans-serif;
+  margin-bottom: 40px;
 }
 
 /* Search Form */
 section h2 {
   text-align: center;
   margin-bottom: 20px;
-  font-family: 'Roboto', Arial, sans-serif; /* Fuente más legible */
+  font-size: 2rem;
+  font-family: 'Roboto', Arial, sans-serif;
 }
 
+/* Estilo para el formulario */
 form {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
+  flex-direction: column; 
+  gap: 20px; 
+  align-items: center; 
+  max-width: 800px; 
+  margin: 0 auto; 
 }
 
-form div {
+form > div {
   display: flex;
-  gap: 20px;
+  justify-content: center; 
+  gap: 40px; 
+}
+
+form div > div {
+  display: flex;
+  flex-direction: column; 
+  gap: 20px; 
 }
 
 form article {
@@ -171,35 +168,68 @@ form article {
   flex-direction: column;
 }
 
-form select {
-  padding: 10px;
+form label {
   font-size: 1rem;
-  border-radius: 5px;
-  margin-top: 5px;
+  margin-bottom: 5px;
+  color: white; 
+  font-family: 'Roboto', Arial, sans-serif;
+  text-align: center;
 }
 
+form select {
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  width: 400px;
+}
+
+/* Botón de envío */
 form button {
-  padding: 10px 20px;
-  background-color: #333;
+  font-family: 'Roboto', Arial, sans-serif;
+  padding: 12px 30px;
+  background-color: #e74c3c; 
   color: white;
   border: none;
-  border-radius: 5px;
   cursor: pointer;
-  font-family: 'Roboto', Arial, sans-serif; /* Fuente legible en botones */
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+form button:hover {
+  background-color: rgba(219, 75, 59, 0.685);
 }
 
-/* Responsive Design */
+/* Responsividad */
 @media (max-width: 768px) {
-  .menu {
-    flex-direction: column;
-    gap: 10px;
+  form > div {
+    flex-direction: column; 
+    gap: 20px;
   }
 
-  .container {
-    width: 100%;
+  form select {
+    width: 100%; 
   }
 
-  form div {
-    flex-direction: column;
+  form button {
+    width: 20%; 
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
