@@ -1,6 +1,6 @@
 /* General styles */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -214,22 +214,263 @@ form button:hover {
   }
 }
 
+/* Design Welcome */
+.home_section {
+  display: flex;
+  justify-content: center;
+  padding: 50px 20px;
+  background-color: #ffffff;
+}
+
+.container_home {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  gap: 40px;
+}
+
+/* Left Section (Image and Overlay Text) */
+.banner-left {
+  position: relative;
+  overflow: hidden;
+}
+
+.banner-left figure {
+  margin: 0s;
+  position: relative;
+}
+
+.banner-left img {
+  width: calc(100% - 10px); /* Reduce 10px del ancho */
+  height: auto;
+  transition: all 0.5s ease-in-out; /* Transición suave para el oscurecimiento */
+}
+
+/* Caption Styles */
+.banner-caption {
+  position: absolute;
+  top: 10%; /* Posiciona en la esquina superior izquierda */
+  left: 10%;
+  text-align: left; /* Alinea el texto a la izquierda */
+  color: white;
+  z-index: 2; /* Asegura que los textos estén sobre la imagen */
+  padding: 10px;
+}
+
+.banner-caption h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #000; /* Texto negro */
+  display: inline-block;
+  padding: 10px 20px;
+  border: 2px solid #e74c3c; /* Bor
+}
+
+.banner-caption h3 span {
+  color: #e74c3c /* Amarillo para "House" */
+}
+
+/* Text Animation */
+.banner-figure {
+  opacity: 0; /* Texts are hidden initially */
+  transform: translateX(-100%); /* Mueve los textos fuera de la vista (hacia la izquierda) */
+  transition: all 0.5s ease-in-out; /* Animación suave para la opacidad y posición */
+}
+
+.banner-figure p {
+  font-size: 1rem;
+  background-color: #e74c3c; /* Aqua color */
+  color: white;
+  padding: 5px 10px;
+  margin: 5px 0;
+  border-radius: 4px;
+}
+
+/* Hover Effects */
+.banner-left:hover .banner-figure {
+  opacity: 1; /* Muestra los textos */
+  transform: translateX(0); /* Posición original de los textos */
+}
+
+.banner-left:hover img {
+  filter: brightness(40%); /* Oscurece la imagen al pasar el mouse */
+}
+
+.banner-left:hover h3 {
+  color:#e74c3c; /* Mantener el texto blanco al pasar el mouse */
+}
+.banner-left:hover h3 span {
+  color: #ffffff; /* Mantener el amarillo para "House" */
+}
+
+/* Hide Texts When Not Hovering */
+.banner-left:not(:hover) .banner-figure {
+  opacity: 0;
+  transform: translateX(-100%); /* Ocultar textos fuera de la vista */
+}
+
+/* Right Section (Text Content) */
+.banner-right {
+  flex: 1;
+}
+
+.banner-right h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #e74c3c;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.banner-right h2 span {
+  color: #000000;
+}
+
+.banner-right h3 {
+  font-size: 1.5rem;
+  font-weight: normal;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.banner-right p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .container_home {
+    flex-direction: column;
+  }
+
+  .banner-caption {
+    left: 5%;
+    top: 35%;
+    width: 90%;
+  }
+
+  .banner-right h2 {
+    font-size: 1.8rem;
+  }
+
+  .banner-right p {
+    font-size: 0.9rem;
+  }
+}
 
 
 
+/* Sección de Servicios */
+.services-section {
+  position: relative;
+  background-image: url('./images/bg1.jpg'); /* Cambia esta ruta */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
+  padding: 80px 20px;
+  color: #fff;
+  text-align: center;
+}
 
+/* Encabezado */
+.services-section header h2 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 10px;
+}
 
+.services-section header h2 span {
+  color: #ff6b6b; /* Color del texto destacado */
+}
 
+.services-section header p {
+  font-size: 18px;
+  margin-bottom: 40px;
+  color: #eee;
+}
 
+/* Contenedor de Servicios */
+.services-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+}
 
+/* Tarjeta de Servicio */
+.service-card {
+  background: #fff;
+  color: #333;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Centra todo el contenido dentro de la tarjeta */
+  max-width: 280px;
+  height: 340px;
+  flex: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex; /* Activar flexbox */
+  flex-direction: column; /* Alinear contenido en columna */
+  align-items: center; /* Centrar horizontalmente */
+}
 
+/* Contenedor del Icono */
+.icon-container {
+  width: 70px; /* Tamaño del círculo */
+  height: 70px;
+  background: #ffffff;
+  border-radius: 50%; /* Hacerlo circular */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: #ff6b6b;
+  box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.3); /* Sombra externa */
+  margin-bottom: 15px; /* Espacio entre el círculo y el título */
+}
 
+/* Ícono dentro del círculo */
+.icon-container .icon {
+  font-size: 28px; /* Tamaño del ícono */
+  color: #ff6b6b; /* Color del ícono */
+}
 
+/* Título del servicio */
+.service-card h4 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-family: 'Roboto', Arial, sans-serif;
+}
 
+/* Texto del servicio */
+.service-card p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
 
+/* Enlace "Read More" */
+.service-card a {
+  color: #ff6b6b;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  position: relative;
+}
 
+.service-card a span {
+  display: inline-block;
+  margin-left: 5px;
+  transition: transform 0.2s ease;
+}
 
-
-
-
-
+.service-card a:hover span {
+  transform: translateX(5px);
+}
