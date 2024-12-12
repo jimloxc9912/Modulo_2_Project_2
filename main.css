@@ -94,7 +94,7 @@ nav {
 .dropdown-menu li {
   padding: 10px;
   width: 100%; 
-  box-sizing: border-box; /* Asegura que padding no aumente el ancho */
+  box-sizing: border-box; 
 }
 
 .dropdown-menu a {
@@ -109,14 +109,14 @@ nav {
 #home {
   background: url('images/banner.jpg') no-repeat center center;
   background-size: cover;
-  padding: 50px 0; /* Aumentar el padding para mayor espacio */
+  padding: 50px 0; 
   color: white;
   text-align: center;
-  font-family: 'Roboto', Arial, sans-serif; /* Centrar todo el texto */
+  font-family: 'Roboto', Arial, sans-serif; 
 }
 
 #home h1 {
-  font-size: 3rem; /* Aumentar tamaño de la fuente */
+  font-size: 3rem; 
   
   margin-bottom: 20px;
   font-weight: bold;
@@ -241,45 +241,48 @@ form button:hover {
 }
 
 .banner-left img {
-  width: calc(100% - 10px); /* Reduce 10px del ancho */
+  width: calc(100% - 10px); 
   height: auto;
-  transition: all 0.5s ease-in-out; /* Transición suave para el oscurecimiento */
+  transition: all 0.5s ease-in-out;
 }
 
 /* Caption Styles */
 .banner-caption {
   position: absolute;
-  top: 10%; /* Posiciona en la esquina superior izquierda */
+  top: 10%;
   left: 10%;
-  text-align: left; /* Alinea el texto a la izquierda */
+  text-align: left; 
   color: white;
-  z-index: 2; /* Asegura que los textos estén sobre la imagen */
+  z-index: 2;
   padding: 10px;
 }
 
 .banner-caption h3 {
   font-size: 2rem;
   font-weight: bold;
-  color: #000; /* Texto negro */
+  color: rgb(0, 0, 0); 
   display: inline-block;
   padding: 10px 20px;
-  border: 2px solid #e74c3c; /* Bor
+  border: 2px solid #e74c3c; 
 }
 
-.banner-caption h3 span {
-  color: #e74c3c /* Amarillo para "House" */
+.banner-caption h3 {
+  color: #000000 
+}
+.banner-caption span {
+  color: #e74c3c 
 }
 
 /* Text Animation */
 .banner-figure {
-  opacity: 0; /* Texts are hidden initially */
-  transform: translateX(-100%); /* Mueve los textos fuera de la vista (hacia la izquierda) */
-  transition: all 0.5s ease-in-out; /* Animación suave para la opacidad y posición */
+  opacity: 0; 
+  transform: translateX(-100%); 
+  transition: all 0.5s ease-in-out; 
 }
 
 .banner-figure p {
   font-size: 1rem;
-  background-color: #e74c3c; /* Aqua color */
+  background-color: #e74c3c; 
   color: white;
   padding: 5px 10px;
   margin: 5px 0;
@@ -288,28 +291,26 @@ form button:hover {
 
 /* Hover Effects */
 .banner-left:hover .banner-figure {
-  opacity: 1; /* Muestra los textos */
-  transform: translateX(0); /* Posición original de los textos */
+  opacity: 1; 
+  transform: translateX(0); 
 }
 
 .banner-left:hover img {
-  filter: brightness(40%); /* Oscurece la imagen al pasar el mouse */
+  filter: brightness(40%); 
 }
 
 .banner-left:hover h3 {
-  color:#e74c3c; /* Mantener el texto blanco al pasar el mouse */
+  color:#e74c3c;
 }
 .banner-left:hover h3 span {
-  color: #ffffff; /* Mantener el amarillo para "House" */
+  color: #ffffff; 
 }
 
-/* Hide Texts When Not Hovering */
 .banner-left:not(:hover) .banner-figure {
   opacity: 0;
-  transform: translateX(-100%); /* Ocultar textos fuera de la vista */
+  transform: translateX(-100%); 
 }
 
-/* Right Section (Text Content) */
 .banner-right {
   flex: 1;
 }
@@ -367,10 +368,10 @@ form button:hover {
 /* Sección de Servicios */
 .services-section {
   position: relative;
-  background-image: url('./images/bg1.jpg'); /* Cambia esta ruta */
+  background-image: url('./images/bg1.jpg'); 
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
+  background-attachment: fixed; 
   padding: 80px 20px;
   color: #fff;
   text-align: center;
@@ -385,7 +386,7 @@ form button:hover {
 }
 
 .services-section header h2 span {
-  color: #ff6b6b; /* Color del texto destacado */
+  color: #ff6b6b; 
 }
 
 .services-section header p {
@@ -409,35 +410,35 @@ form button:hover {
   color: #333;
   padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  text-align: center; /* Centra todo el contenido dentro de la tarjeta */
+  text-align: center; 
   max-width: 280px;
   height: 340px;
   flex: 1;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex; /* Activar flexbox */
-  flex-direction: column; /* Alinear contenido en columna */
-  align-items: center; /* Centrar horizontalmente */
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
 }
 
 /* Contenedor del Icono */
 .icon-container {
-  width: 70px; /* Tamaño del círculo */
+  width: 70px;
   height: 70px;
   background: #ffffff;
-  border-radius: 50%; /* Hacerlo circular */
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   color: #ff6b6b;
-  box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.3); /* Sombra externa */
-  margin-bottom: 15px; /* Espacio entre el círculo y el título */
+  box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.3); 
+  margin-bottom: 15px; 
 }
 
 /* Ícono dentro del círculo */
 .icon-container .icon {
-  font-size: 28px; /* Tamaño del ícono */
-  color: #ff6b6b; /* Color del ícono */
+  font-size: 28px; 
+  color: #ff6b6b; 
 }
 
 /* Título del servicio */
@@ -473,4 +474,169 @@ form button:hover {
 
 .service-card a:hover span {
   transform: translateX(5px);
+}
+
+
+
+
+/*Places*/
+.places-section {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+}
+
+.places-section h2 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+}
+
+.places-section h2 span {
+  color: #ff6b6b;
+}
+
+.places-section p {
+  font-size: 18px;
+  color: #ffffffb7;
+  margin-bottom: 30px;
+}
+
+/* Contenedor de las tarjetas */
+.places-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; 
+}
+
+/* Estilo de la tarjeta */
+.place-card {
+  position: relative; 
+  width: 250px; 
+  height: 350px; 
+  overflow: hidden; 
+  border-radius: 3px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.place-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagen dentro de la tarjeta */
+.image-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.places-section .image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  transition: transform 0.3s ease-in-out;
+}
+
+.place-card:hover .image-container img {
+  transform: scale(1.1);
+}
+
+
+
+/* Contenido superpuesto */
+.place-content {
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5); 
+  color: #fff; 
+  text-align: center;
+  padding: 10px;
+}
+
+.place-content h4 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.place-content p {
+  font-size: 14px;
+  margin: 0;
+}
+
+
+
+
+
+
+
+/* Sección principal */
+.stats-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f95c61; 
+  color: white;
+}
+
+.image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.image-container img {
+  max-height: 400px; 
+  object-fit: contain;
+}
+
+.stats-content {
+  flex: 2;
+  text-align: center;
+}
+
+.stats-content h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #000;
+  font-size: 40px;
+  margin-bottom: 100px;
+}
+
+.stats-numbers {
+  display: flex;
+  justify-content: space-around;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-item .number {
+  font-size: 48px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.stat-item .description {
+  font-size: 16px;
+  margin: 5px 0 0;
+}
+
+@media (max-width: 768px) {
+  .image-container {
+    display: none; 
+  }
 }
