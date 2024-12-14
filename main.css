@@ -4,15 +4,12 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
 }
 
-/*Estilos de header*/
+/* Estilos de header */
 .container {
- /* width: 100%;*/
   margin: 0;
   padding: 0 20px;
-  
 }
 
 .header {
@@ -20,27 +17,30 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 20px 0;
+  position: relative;
 }
 
 .logo h1 {
   margin: 0;
   font-size: 36px;
 }
+
 .logo a {
   text-decoration: none;
   color: #e74c3c;
   text-align: center;
 }
 
-.logo span{
-  color:#030303;
+.logo span {
+  color: #030303;
 }
 
 nav {
   display: flex;
-  text-decoration: none;
+  align-items: center;
 }
 
+/* Estilos del menú principal */
 .main-menu {
   list-style: none;
   margin: 0;
@@ -64,13 +64,11 @@ nav {
   text-decoration: none;
   background-color: #ffffff;
   color: #e74c3c;
-  
 }
 
 /* Dropdown menu */
 .dropdown {
   position: relative;
-  
 }
 
 .dropdown-menu {
@@ -79,13 +77,11 @@ nav {
   top: 100%;
   left: 0;
   display: none;
-  padding:0;
+  padding: 0;
   background-color: rgb(255, 255, 255);
   min-width: 150px;
   text-align: center;
-
 }
-
 
 .dropdown:hover .dropdown-menu {
   display: block;
@@ -93,8 +89,8 @@ nav {
 
 .dropdown-menu li {
   padding: 10px;
-  width: 100%; 
-  box-sizing: border-box; 
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .dropdown-menu a {
@@ -102,8 +98,109 @@ nav {
 }
 
 .dropdown-menu li:hover {
-  color:#e74c3c;
+  color: #e74c3c;
 }
+
+/* Hamburger menu styles */
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+}
+
+.hamburger-menu .bar {
+  height: 4px;
+  background-color: #000;
+  border-radius: 2px;
+}
+
+/* Ocultar el checkbox visualmente pero seguir usándolo */
+.menu-toggle {
+  display: none;
+}
+/* Media Queries - Cambiar a menú vertical en pantallas pequeñas */
+@media (max-width: 768px) {
+  .header {
+    display: flex;
+    justify-content: space-between;  
+    align-items: center;  
+    width: 100%;
+    position: relative;
+  }
+
+  .logo {
+    display: block;
+    flex: 1;  
+  }
+
+  nav {
+    width: auto;
+    position: relative;
+  }
+
+  .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;  
+    z-index: 2; 
+  }
+
+  .hamburger-menu .bar {
+    height: 4px;
+    background-color: #000;
+    border-radius: 2px;
+  }
+
+  /* Menú principal oculto por defecto */
+  .main-menu {
+    display: none;
+    flex-direction: column;
+    width: 80%;  
+    max-width: 400px;  
+    margin: 0 auto;  
+    margin-top: 10px;
+    text-align: center;
+    background-color: white;  
+    position: fixed;  
+    top: 50%;  
+    left: 50%; 
+    transform: translate(-50%, -50%);  
+    border-radius: 5px;  
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);  
+    z-index: 1;  
+    padding: 20px 0;  
+  }
+
+  .main-menu li {
+    margin: 10px 0;
+    width: 100%;
+  }
+
+  .main-menu a {
+    padding: 10px;
+    width: 100%;
+    display: block;
+    color: #000;  
+    text-decoration: none;
+  }
+
+  .main-menu a:hover {
+    background-color: #e74c3c;  
+    color: white;  
+  }
+  .menu-toggle:checked + .hamburger-menu + nav .main-menu {
+    display: flex;
+  }
+}
+
 
 /* Home Section */
 #home {
@@ -117,7 +214,6 @@ nav {
 
 #home h1 {
   font-size: 3rem; 
-  
   margin-bottom: 20px;
   font-weight: bold;
 }
@@ -153,14 +249,16 @@ form {
 
 form > div {
   display: flex;
-  justify-content: center; 
-  gap: 40px; 
+  justify-content: space-between; 
+  gap: 20px;
+  width: 100%;
 }
 
 form div > div {
   display: flex;
   flex-direction: column; 
   gap: 20px; 
+  width: 48%; 
 }
 
 form article {
@@ -180,7 +278,9 @@ form select {
   padding: 12px;
   font-size: 1rem;
   border: 1px solid #ccc;
-  width: 400px;
+  width: 100%; 
+  max-width: 400px; 
+  box-sizing: border-box;
 }
 
 /* Botón de envío */
@@ -193,6 +293,7 @@ form button {
   cursor: pointer;
   font-size: 1rem;
   transition: background-color 0.3s ease;
+  align-self: center; 
 }
 form button:hover {
   background-color: rgba(219, 75, 59, 0.685);
@@ -205,15 +306,22 @@ form button:hover {
     gap: 20px;
   }
 
+  form div > div {
+    width: 100%; 
+  }
+
   form select {
     width: 100%; 
   }
 
   form button {
-    width: 20%; 
+    width: 50%; 
   }
 }
 
+
+/* Design Welcome */
+/* Design Welcome */
 /* Design Welcome */
 .home_section {
   display: flex;
@@ -249,7 +357,7 @@ form button:hover {
 /* Caption Styles */
 .banner-caption {
   position: absolute;
-  top: 10%;
+  top: 5%; /* Mover el texto más arriba cambiando el valor de top */
   left: 10%;
   text-align: left; 
   color: white;
@@ -350,8 +458,16 @@ form button:hover {
 
   .banner-caption {
     left: 5%;
-    top: 35%;
-    width: 90%;
+    top: 10%; 
+    width: 80%;
+  }
+
+  .banner-caption h3 {
+    font-size: 1.6rem;
+  }
+
+  .banner-figure p {
+    font-size: 0.9rem; 
   }
 
   .banner-right h2 {
@@ -363,8 +479,22 @@ form button:hover {
   }
 }
 
+@media (max-width: 480px) {
+  .banner-caption h3 {
+    font-size: 1rem; 
+  }
+
+  .banner-figure p {
+    font-size: 0.5rem; 
+  }
+
+  .banner-caption {
+    top: 1%; 
+  }
+}
 
 
+/* Sección de Servicios */
 /* Sección de Servicios */
 .services-section {
   position: relative;
@@ -476,9 +606,27 @@ form button:hover {
   transform: translateX(5px);
 }
 
+/* Media Query para pantallas pequeñas */
+@media (max-width: 768px) {
+  .services-container {
+    flex-direction: column; /* Cambia la dirección de las tarjetas a columna */
+    align-items: center; /* Centra las tarjetas en pantallas pequeñas */
+    gap: 20px;
+  }
+
+  .service-card {
+    max-width: 90%; /* Ajusta el tamaño máximo de las tarjetas para pantallas pequeñas */
+    margin-bottom: 20px; /* Añade un margen entre las tarjetas */
+    height: 350px; /* Aumenta la altura de las tarjetas en 10px */
+  }
+}
 
 
-
+/*Places*/
+/*Places*/
+/*Places*/
+/*Places*/
+/*Places*/
 /*Places*/
 .places-section {
   text-align: center;
@@ -507,54 +655,47 @@ form button:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px; 
+  gap: 20px;
 }
 
 /* Estilo de la tarjeta */
 .place-card {
-  position: relative; 
-  width: 250px; 
-  height: 350px; 
-  overflow: hidden; 
+  position: relative;
+  width: 250px;
+  height: 350px;
+  max-height: 450px;
+  overflow: hidden;
   border-radius: 3px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.place-card p {
-  font-size: 18px;
-  color: #ffffffb7;
-  margin-bottom: 30px;
-}
-
-.place-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* Imagen dentro de la tarjeta */
+/* Ajuste de la imagen dentro de la tarjeta */
 .image-container {
   width: 100%;
-  height: 100%;
+  height: 60%; /* Define proporción de la imagen en la tarjeta */
   overflow: hidden;
+  position: relative;
+  z-index: 1; /* Asegura que la imagen esté por debajo del contenido superpuesto */
 }
 
 .places-section .image-container img {
   width: 100%;
-  height: 100%;
-  object-fit: cover; 
+  height: 100%; /* La imagen ocupa todo el alto del contenedor */
+  object-fit: cover; /* Asegura que la imagen mantenga su proporción */
   transition: transform 0.3s ease-in-out;
 }
 
 .place-card:hover .image-container img {
-  transform: scale(1.1);
+  transform: scale(1.2); /* Zoom en la imagen al hacer hover */
 }
-
-
 
 /* Contenido superpuesto */
 .place-content {
-  position: absolute; 
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -563,10 +704,11 @@ form button:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 0, 0.5); 
-  color: #fff; 
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
   text-align: center;
   padding: 10px;
+  z-index: 2; /* Asegura que el contenido esté sobre la imagen */
 }
 
 .place-content h4 {
@@ -578,10 +720,8 @@ form button:hover {
 .place-content p {
   font-size: 14px;
   margin: 0;
+  color:white;
 }
-
-
-
 
 
 
@@ -642,7 +782,7 @@ form button:hover {
 }
 
 @media (max-width: 768px) {
-  .image-container {
+  .image-container-stats {
     display: none; 
   }
 }
@@ -686,6 +826,7 @@ form button:hover {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se ajusten a nuevas líneas */
   justify-content: space-between;
 }
 
@@ -806,6 +947,29 @@ form button:hover {
 
 #custom-blog-footer p span {
   margin-left: auto;
+}
+/* Media Query para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .custom-container-blog {
+    flex-direction: column; /* Cambiar a columna cuando la pantalla sea pequeña */
+    align-items: center;
+  }
+
+  /* Cambiar el tamaño de los artículos para que se apilen uno encima de otro */
+  .custom-main-article {
+    order: 1; /* Asegura que el artículo principal se muestre primero */
+    margin-bottom: 20px; /* Espaciado entre el artículo principal y los artículos */
+  }
+
+  .custom-blog-grid {
+    order: 2; /* Asegura que la cuadrícula de artículos se muestre después */
+    justify-content: center; /* Centra los artículos */
+  }
+
+  .custom-blog-item {
+    width: 100%; /* Los artículos de blog ocuparán el 100% del ancho */
+    max-width: 400px; /* Limita el ancho máximo de cada artículo */
+  }
 }
 
 
@@ -1118,10 +1282,13 @@ form button:hover {
   display: flex;
   justify-content: space-between;
   padding: 0 50px;
+  flex-wrap: wrap; /* Permite que los elementos se ajusten a nuevas líneas en pantallas pequeñas */
 }
 
 .footer-section {
   width: 30%;
+  padding: 10px;
+  box-sizing: border-box; /* Asegura que el padding no rompa el tamaño de las secciones */
 }
 
 .footer-section h3 {
@@ -1203,4 +1370,44 @@ form button:hover {
 
 .footer-bottom a:hover {
   text-decoration: underline;
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 768px) {
+  /* Cambiar el ancho de las secciones del footer */
+  .footer-section {
+    width: 100%; /* Las secciones ocuparán todo el ancho disponible */
+    margin-bottom: 20px; /* Separación entre las secciones */
+  }
+
+  /* Asegurar que el contenedor de la parte inferior se mantenga en el centro */
+  .footer-bottom {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  /* Ajustar el formulario para que sea más pequeño en pantallas pequeñas */
+  .footer-section form {
+    flex-direction: column; /* Cambiar la dirección del formulario a columna */
+  }
+
+  .footer-section input,
+  .footer-section button {
+    width: 100%; /* Los elementos del formulario ocuparán todo el ancho disponible */
+    margin-bottom: 10px; /* Espaciado entre los campos */
+  }
+
+  /* Ajustar los textos y enlaces */
+  .footer-section h3 {
+    font-size: 16px;
+  }
+
+  .footer-section p,
+  .footer-section ul li {
+    font-size: 14px;
+  }
+
+  .footer-bottom {
+    padding-top: 15px;
+  }
 }
